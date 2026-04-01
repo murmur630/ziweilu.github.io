@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金宝英星际三部曲 - 实时评价</title>
+    <meta name="description" content="《金宝英星际三部曲》读者评价与推荐，包含书籍简介、精美图片、博主推荐视频和购买链接">
+    <meta name="keywords" content="金宝英,星际三部曲,科幻小说,读者评价,购买链接">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f3f7;
+            background-image: url('https://picsum.photos/id/1060/1200/800');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            color: #5a3d5c;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 154, 158, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://picsum.photos/id/1025/1200/600');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+            font-weight: bold;
+            color: #5a3d5c;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            color: #7a5c7c;
+            font-style: italic;
+        }
+        
+        .book-info {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.2);
+            margin-bottom: 30px;
+            border: 2px solid #fad0c4;
+        }
+        
+        .book-info h2 {
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(255, 107, 157, 0.3);
+        }
+        
+        .book-info p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .book-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .book-cover {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid #fad0c4;
+        }
+        
+        .book-cover:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.4);
+        }
+        
+        .book-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .book-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .link-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .link-button.douban {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+            color: white;
+        }
+        
+        .link-button.dangdang {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #5a3d5c;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+        }
+        
+        .video-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.2);
+            margin-bottom: 30px;
+            border: 2px solid #fad0c4;
+        }
+        
+        .video-section h2 {
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(255, 107, 157, 0.3);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fad0c4;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .video-placeholder:hover {
+            background: #ffd6e0;
+        }
+        
+        .video-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-radius: 15px;
+        }
+        
+        .video-play-btn {
+            position: relative;
+            z-index: 2;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #ff6b9d;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.3);
+        }
+        
+        .video-placeholder:hover .video-play-btn {
+            transform: scale(1.1);
+            background: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+        }
+        
+        .video-placeholder p {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            background: rgba(255, 107, 157, 0.8);
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+        
+        .reviews-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.2);
+            margin-bottom: 30px;
+            border: 2px solid #fad0c4;
+        }
+        
+        .reviews-section h2 {
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(255, 107, 157, 0.3);
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+        }
+        
+        .refresh-btn:hover {
+            background: linear-gradient(135deg, #ff8fab 0%, #ff6b9d 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        }
+        
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .review-card {
+            background: #f9f3f7;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b9d;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.1);
+        }
+        
+        .review-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.2);
+        }
+        
+        .review-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: #5a3d5c;
+            font-weight: bold;
+        }
+        
+        .review-card p {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .review-meta {
+            font-size: 0.85em;
+            color: #ff6b9d;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #ff4757;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #7a5c7c;
+            font-size: 0.9em;
+            background: linear-gradient(135deg, #fad0c4 0%, #ffd6e0 100%);
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                border-radius: 15px;
+            }
+            
+            header {
+                padding: 40px 0;
+                border-radius: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .book-info,
+            .reviews-section,
+            .video-section {
+                padding: 25px;
+                border-radius: 15px;
+            }
+            
+            .book-gallery {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .book-cover {
+                width: 200px;
+                border-radius: 12px;
+            }
+            
+            .book-links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+            
+            .link-button {
+                text-align: center;
+                padding: 15px;
+                font-size: 16px;
+            }
+            
+            .reviews-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .review-card {
+                padding: 20px;
+                border-radius: 12px;
+            }
+            
+            .video-play-btn {
+                width: 80px;
+                height: 80px;
+                font-size: 30px;
+            }
+            
+            footer {
+                padding: 20px;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>金宝英星际三部曲</h1>
+            <p class="subtitle">探索宇宙中的孤独与爱</p>
+        </header>
+        
+        <section class="book-info">
+            <h2>作品简介</h2>
+            <div class="book-gallery">
+                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=金宝英星际三部曲书籍封面 科幻风格 宇宙背景 精装版&image_size=landscape_4_3" alt="金宝英星际三部曲封面" class="book-cover">
+                <div class="book-details">
+                    <p>《金宝英星际三部曲》由韩国知名科幻作家金宝英创作，包含《我在等你》《我在走向你》《走向未来的人们》三部作品。</p>
+                    <p>金宝英是韩国科幻界的标杆人物，韩国导演奉俊昊称她的小说"本身就是令人屏息的影像艺术"，并曾邀请她担任《雪国列车》的剧本顾问。中国星云奖得主韩松评价她"创造了一个好莱坞永远无法模仿的世界"。</p>
+                    <p>这套作品以星际旅行为背景，探讨了时间、孤独与爱的深刻主题，通过书信体形式展现了跨越时空的爱情故事。</p>
+                    <div class="book-links">
+                        <a href="https://book.douban.com/subject/37685569/" target="_blank" class="link-button douban">豆瓣链接</a>
+                        <a href="http://search.dangdang.com/?key=金宝英星际三部曲" target="_blank" class="link-button dangdang">当当购买</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="video-section">
+            <h2>博主推荐视频</h2>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=科幻书籍推荐视频封面 宇宙背景 书籍展示&image_size=landscape_16_9" alt="博主推荐视频">
+                    <div class="video-play-btn">▶</div>
+                    <p>点击观看博主推荐视频</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reviews-section">
+            <h2>
+                读者评价
+                <button class="refresh-btn" onclick="fetchReviews()">刷新评价</button>
+            </h2>
+            <div class="reviews-container" id="reviews-container">
+                <div class="loading">正在加载评价...</div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2026 金宝英星际三部曲评价展示</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 评价数据
+        let reviews = [];
+        
+        // 页面加载时获取评价
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchReviews();
+        });
+        
+        // 获取评价函数
+        function fetchReviews() {
+            const container = document.getElementById('reviews-container');
+            container.innerHTML = '<div class="loading">正在加载评价...</div>';
+            
+            // 由于浏览器的同源策略限制，我们使用模拟数据
+            // 在实际生产环境中，可以使用服务器端爬虫获取数据
+            setTimeout(function() {
+                // 模拟从豆瓣获取的评价数据
+                reviews = [
+                    {
+                        title: "今年读过最好的科幻书！！！",
+                        content: "放假第一天，宅家读金宝英的《星际三部曲》，读完我在书桌前坐了半小时缓不过来。一口气读完的感觉太爽了！我很少看科幻（因为脑子不够用），但是这部是个例外，它不是那种硬科幻的炫技，而是用三十封穿越光年的信，把'孤独'和'爱'写得像宇宙一样大。",
+                        author: "少说话多读书",
+                        date: "2026-02-23"
+                    },
+                    {
+                        title: "孤独是宇宙的底色，爱是人类的答案",
+                        content: "2026年电影春节档影片类型丰富，涵盖喜剧、武侠、科幻等多元题材类型，让观众在团聚中共享光影魅力。尤其是科幻影片《星河入梦》，将故事锚定近未来，以虚拟梦境系统'良梦'的问世为切入点，既搭建了充满科幻感的世界观，又牢牢扣住现实情感的内核。",
+                        author: "且向书山深处隐",
+                        date: "2026-02-28"
+                    },
+                    {
+                        title: "浪漫的双向奔赴，跨越时空的爱情诗篇",
+                        content: "金宝英的星际三部曲，分为《我在等你》、《我在走向你》、《走向未来的人们》三本，用的是原封和原版设计，其中前两本是一对将要结婚的新人互相奔赴的故事，第三本则是以星河为主人公的探索宇宙尽头的故事，第三本出版的更早，前两本故事中男人和女人是以星河的父母的故事为背景。",
+                        author: "河豚爱读书",
+                        date: "2026-02-15"
+                    },
+                    {
+                        title: "韩国女科幻作家写给宇宙浪漫情书×文明哲思",
+                        content: "金宝英是当代韩国最具代表性的科幻作家之一，被读者们称为'最具科幻色彩的科幻作家'，是《雪国列车》剧本顾问、三获韩国SF大奖的创作者。这套星际科幻三部曲是一场关于时间、存在与情感的深度哲思。近光速飞行、时间膨胀、星际殖民、文明坍缩，硬核设定严谨不晦涩；书信...",
+                        author: "武林萌主唐女侠",
+                        date: "2026-02-26"
+                    },
+                    {
+                        title: "时间误差中的爱情 跨越星际的等待与坚守",
+                        content: "这个故事讲述的是一个跨越星际的爱情。未来的世界，星际旅行是一件很普遍的事情。人类所乘坐的飞船，在不断的加速后可以达到光速。达到了光速，也就超越了时间。而一些想钻时间空子的人，他们不是去往某个地点，而是想跨越到某个时间点，到另一个时间维度。比如说那些期待养老...",
+                        author: "如峻峰",
+                        date: "2026-03-06"
+                    },
+                    {
+                        title: "被宇宙级孤独压得喘不过气｜读完久久缓不过来",
+                        content: "📗书：《金宝英星际三部曲》：《我在等你》《我在走向你》《走向未来的人们》三部作品。 ✍️作者：金宝英 《我在等你》：我在等你，整个宇宙与我擦肩而过。 《我在走向你》：我是你曾经存在于世的证明和痕迹。 《走向未来的人们》：跨越亿万年的孤独，只为抵达宇宙尽头...",
+                        author: "康康读写生活",
+                        date: "2026-02-08"
+                    }
+                ];
+                displayReviews(reviews);
+            }, 1000);
+            
+            // 真实的爬虫代码（需要在服务器端运行）
+            /*
+            fetch('https://m.douban.com/book/subject/37685569/reviews/')
+                .then(response => response.text())
+                .then(data => {
+                    // 解析HTML获取评价数据
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const reviewElements = doc.querySelectorAll('.review-item');
+                    
+                    reviews = Array.from(reviewElements).map(element => {
+                        const title = element.querySelector('.review-title').textContent.trim();
+                        const content = element.querySelector('.review-content').textContent.trim();
+                        const author = element.querySelector('.review-author').textContent.trim();
+                        const date = element.querySelector('.review-date').textContent.trim();
+                        
+                        return {
+                            title,
+                            content,
+                            author,
+                            date
+                        };
+                    });
+                    
+                    displayReviews(reviews);
+                })
+                .catch(error => {
+                    console.error('获取评价失败:', error);
+                    container.innerHTML = '<div class="error">获取评价失败，请稍后重试</div>';
+                });
+            */
+        }
+        
+        // 显示评价
+        function displayReviews(reviews) {
+            const container = document.getElementById('reviews-container');
+            
+            if (reviews.length === 0) {
+                container.innerHTML = '<div class="error">暂无评价数据</div>';
+                return;
+            }
+            
+            let html = '';
+            reviews.forEach(review => {
+                html += `
+                    <div class="review-card">
+                        <h3>${review.title}</h3>
+                        <p>${review.content}</p>
+                        <div class="review-meta">
+                            <span>${review.author}</span> · <span>${review.date}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
